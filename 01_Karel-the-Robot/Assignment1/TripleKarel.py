@@ -26,18 +26,29 @@ def paint_building_one():
 
 
 def paint_north_side():
-    while left_is_blocked():
-        put_beeper()
-        move()
+        paint_and_move()
 
-
+##start working here
 def paint_west_side():
     if facing_west():
         turn_left()
-
+        move()
     else:
         turn_right()
+        move()
 
+    paint_and_move()
+
+
+
+def paint_south_side():
+
+
+
+def paint_and_move():
+    while left_is_blocked():
+    move()
+    put_beeper()
 
 def turn_right():
     for i in range (3):
