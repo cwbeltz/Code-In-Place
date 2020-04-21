@@ -13,45 +13,50 @@ Triple sample worlds supplied in the starter folder.
 
 def main():
     paint_building_one()
-    move_to_next_building()
     paint_building_two()
-    move_to_next_building()
     paint_building_three()
 
 
 def paint_building_one():
-    paint_north_side()
-    paint_west_side()
-    paint_south_side()
-
-
-def paint_north_side():
-        paint_and_move()
-
-##start working here
-def paint_west_side():
-    if facing_west():
-        turn_left()
-        move()
-    else:
-        turn_right()
-        move()
-
+    paint_and_move()
+    turn_left()
+    move()
+    paint_and_move()
+    turn_left()
+    move()
     paint_and_move()
 
 
+def paint_building_two():
+    turn_right()
+    paint_and_move()
+    turn_left()
+    move()
+    paint_and_move()
+    turn_left()
+    move()
+    paint_and_move()
 
-def paint_south_side():
 
+def paint_building_three():
+    turn_right()
+    paint_and_move()
+    turn_left()
+    move()
+    paint_and_move()
+    turn_left()
+    move()
+    paint_and_move()
 
 
 def paint_and_move():
     while left_is_blocked():
-    move()
-    put_beeper()
+        put_beeper()
+        move()
+
 
 def turn_right():
-    for i in range (3):
+    for i in range(3):
         turn_left()
 
 
