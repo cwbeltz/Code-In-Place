@@ -32,25 +32,28 @@ def repair_column():
     turn_left()
 
 
-#pre:
-#post:
+#pre: at bottom of column facing east
+#post: at bottom of next column facing east
 def move_to_next_column():
     if front_is_clear():
         for i in range(4):
             move()
 
 
-
+#pre: in a space either with or without a beeper
+#post: in a space with a beeper
 def repair_stone():
     if no_beepers_present():
         put_beeper()
 
-
+#pre: facing original direction
+#post: facing opposite direction (i.e., 180 degree turn)
 def do_180():
     for i in range(2):
         turn_left()
 
-
+#pre: at top/north end of column, facing south
+#post: at bottom/south end of column, facing south
 def return_to_column_bottom():
     while front_is_clear():
         move()
