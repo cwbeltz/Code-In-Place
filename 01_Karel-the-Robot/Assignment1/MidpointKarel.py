@@ -1,4 +1,4 @@
-from karel.stanfordkarel import * 
+from karel.stanfordkarel import *
 
 """
 File: MidpointKarel.py
@@ -14,26 +14,62 @@ assume that it is at least as tall as it is wide.
 
 
 def main():
-   create_beeper_X()
-   #remove_one_beeper_everywhere()
-   #find_remaining_middle_beeper()
-   #remove_middle_beeper_goto_bottom()
-   #place_beeper()
+    create_beeper_X()
+    remove_one_beeper_everywhere()
+    # find_remaining_middle_beeper()
+    # remove_middle_beeper_goto_bottom()
+    # put_beeper()
 
 
 def create_beeper_X():
-   diagonal_to_NE()
-   #go_to_SE_corner()
-   #diagonal_to_NW()
+    diagonal_to_NE()
+    go_to_SE_corner()
+    diagonal_to_NW()
+
+
+def remove_one_beeper_everywhere():
+    clear_column_beeper()
+    do_180()
+    return_to_start()
+
+
+def clear_column_beeper():
+
 
 
 def diagonal_to_NE():
     while front_is_clear():
-        place_beeper()
+        put_beeper()
         move()
         turn_left()
         move()
         turn_right()
+    put_beeper()
+
+
+def go_to_SE_corner():
+    turn_right()
+    while front_is_clear():
+        move()
+    turn_right()
+
+
+def diagonal_to_NW():
+    while front_is_clear():
+        put_beeper()
+        move()
+        turn_right()
+        move()
+        turn_left()
+    put_beeper()
+    turn_left()
+
+
+#pre: facing original direction
+#post: facing opposite direction (i.e., 180 degree turn)
+def do_180():
+    for i in range(2):
+        turn_left()
 
 
 def turn_right():
