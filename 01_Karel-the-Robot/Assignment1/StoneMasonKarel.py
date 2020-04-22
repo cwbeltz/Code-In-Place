@@ -9,14 +9,42 @@ should make sure that your program works for all of the
 sample worlds supplied in the starter folder.
 """
 
-#pre:
-#post
+
+# pre: beginning at the bottom/south end of column 1, facing east.
+# post: ending at the bottom/south end of furthest column, facing east.
 def main():
     repair_column()
-    move_to_next_column()
+    #move_to_next_column()
+
+#pre: at bottom of un-repaired column, facing east
+#post: at bottom of REPAIRED column, facing east
+def repair_column():
+    turn_left()
+    while front_is_clear():
+        repair_stone()
+        move()
+    do_180()
+    return_to_column_bottom()
+    turn_left()
+
+def repair_stone():
+    if no_beepers_present():
+        put_beeper()
 
 
+def do_180():
+    for i in range(2):
+        turn_left()
 
+
+def return_to_column_bottom():
+    while front_is_clear():
+        move()
+
+
+def turn_right():
+    for i in range(3):
+        turn_left()
 
 
 # There is no need to edit code beyond this point
