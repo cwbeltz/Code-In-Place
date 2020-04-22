@@ -14,13 +14,31 @@ assume that it is at least as tall as it is wide.
 
 
 def main():
-    """
-    You should write your code to make Karel do its task in
-    this function. Make sure to delete the 'pass' line before
-    starting to write your own code. You should also delete this
-    comment and replace it with a better, more descriptive one.
-    """
-    pass
+   create_beeper_X()
+   #remove_one_beeper_everywhere()
+   #find_remaining_middle_beeper()
+   #remove_middle_beeper_goto_bottom()
+   #place_beeper()
+
+
+def create_beeper_X():
+   diagonal_to_NE()
+   #go_to_SE_corner()
+   #diagonal_to_NW()
+
+
+def diagonal_to_NE():
+    while front_is_clear():
+        place_beeper()
+        move()
+        turn_left()
+        move()
+        turn_right()
+
+
+def turn_right():
+    for i in range(3):
+        turn_left()
 
 
 # There is no need to edit code beyond this point
