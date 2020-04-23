@@ -21,36 +21,43 @@ def main():
     # put_beeper()
 
 
+#pre: Karel is in SW corner (bottom row) facing east; world is empty
+#post: Karel is in NW corner (top row) facing east; world has an "X" of beepers with 2 in middle position
 def create_beeper_X():
     diagonal_to_NE()
     go_to_SE_corner()
     diagonal_to_NW()
 
 
-#pre:
-#post:
+#pre: Karel is in NW corner (top row) facing east; world has an "X" of beepers with 2 in middle position
+#post: Karel is in the NE corner (top row) facing east; world has only 1 beeper in the world located
+# in the middle position
 def remove_one_beeper_everywhere():
+    while front_is_clear():
+        clear_column_beeper()
+        do_180()
+        return_to_start()
+        move()
     clear_column_beeper()
     do_180()
     return_to_start()
-
 
 #pre:
 #post:
 def clear_column_beeper():
     while front_is_clear():
         turn_right()
-    while front_is_clear():
+        while front_is_clear():
+            safe_pick()
+            move()
         safe_pick()
-        move()
-    safe_pick()
 
 
 def return_to_start():
     while front_is_clear():
         move()
     do_180()
-    turn_right()
+    turn_left()
 
 
 def diagonal_to_NE():
