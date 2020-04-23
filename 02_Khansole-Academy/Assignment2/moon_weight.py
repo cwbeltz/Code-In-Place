@@ -4,15 +4,18 @@ File: moon_weight.py
 Add your comments here.
 """
 
+MOON_MULTIPLE = 0.165 #this a GLOBAL CONSTANT
 
 def main():
-    """
-    You should write your code for this program in this function.
-    Make sure to delete the 'pass' line before starting to write
-    your own code. You should also delete this comment and replace
-    it with a better, more descriptive one.
-    """
-    pass
+    earth_weight_str = input("Enter a weight on earth: ")
+
+    #type casting
+    earth_weight = float(earth_weight_str)
+
+    #lhs = rhs
+    # '=' assignment operator
+
+    moon_weight = 0.165 * earth_weight
 
 
 # This provided line is required at the end of a Python file
