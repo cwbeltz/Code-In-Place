@@ -27,14 +27,30 @@ def create_beeper_X():
     diagonal_to_NW()
 
 
+#pre:
+#post:
 def remove_one_beeper_everywhere():
     clear_column_beeper()
     do_180()
     return_to_start()
 
 
+#pre:
+#post:
 def clear_column_beeper():
+    while front_is_clear():
+        turn_right()
+    while front_is_clear():
+        safe_pick()
+        move()
+    safe_pick()
 
+
+def return_to_start():
+    while front_is_clear():
+        move()
+    do_180()
+    turn_right()
 
 
 def diagonal_to_NE():
@@ -62,11 +78,16 @@ def diagonal_to_NW():
         move()
         turn_left()
     put_beeper()
-    turn_left()
+    do_180()
 
 
-#pre: facing original direction
-#post: facing opposite direction (i.e., 180 degree turn)
+def safe_pick():
+    if beepers_present():
+        pick_beeper()
+
+
+# pre: facing original direction
+# post: facing opposite direction (i.e., 180 degree turn)
 def do_180():
     for i in range(2):
         turn_left()
