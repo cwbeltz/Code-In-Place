@@ -15,7 +15,11 @@ def main():
     #lhs = rhs
     # '=' assignment operator
 
-    moon_weight = 0.165 * earth_weight
+    #moon_weight = 0.165 * earth_weight
+    moon_weight = MOON_MULTIPLE * earth_weight
+
+    print("Equivalent weight on moon: " + str(moon_weight)) #to concatenate, both sides need to be strings
+
 
 
 # This provided line is required at the end of a Python file
